@@ -73,8 +73,15 @@ Place the component in your markup:
 The base projection to use for the map, choices are "EPSG:4326" or "EPSG:3857", default is "EPSG:3857"
 
 usage examples: 
-data-projection="EPSG:4326"
-data-projection="EPSG:3857"
+
+```html
+<div class="Coveomapdisplay" data-projection="EPSG:4326"></div>
+```
+
+
+```html
+<div class="Coveomapdisplay" data-projection="EPSG:3857"></div>
+```
 
 ## Extending
 
