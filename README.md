@@ -65,7 +65,7 @@ export * from '@coveops/mapdisplay'
 Place the component in your markup:
 
 ```html
-<div class="Coveomapdisplay"></div>
+<div class="CoveoMapdisplay" data-projection="EPSG:3857" style="width: 90%; height: 400px; display: block; position: relative; margin: auto;"></div>
 ```
 
 # Parameters
