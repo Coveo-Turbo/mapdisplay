@@ -98,8 +98,11 @@ export class Extendedmapdisplay extends mapdisplay {}
 ## Usefull commands
 
 npm i : install the dependencies
+
 npm run build : builds the project
+
 npm run serve : serves on the localhost post devifned in .env
 
 ./node_modules/.bin/coveops create:page mapdisplay : creates a page called "mapdisplay"
+
 ./node_modules/.bin/coveops deploy : deploys a page to the coveo platform, .env defaults this to mapdisplay
