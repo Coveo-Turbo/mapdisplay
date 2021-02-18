@@ -1,0 +1,37 @@
+{
+    "name": "@coveops/mapdisplay",
+    "version": "1.0.0",
+    "description": "",
+    "main": "dist/index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "coveops build mapdisplay --template typescript",
+        "watch": "coveops build mapdisplay --template typescript --watch",
+        "serve": "coveops serve",
+        "precompile": "npm run build"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Coveo-Turbo/mapdisplay.git"
+    },
+    "author": "Louis-Philippe Blais",
+    "license": "Apache-2.0",
+    "bugs": {
+        "url": "https://github.com/Coveo-Turbo/mapdisplay/issues"
+    },
+    "homepage": "https://github.com/Coveo-Turbo/mapdisplay#readme",
+    "devDependencies": {
+        "@coveops/cli": "^0.15.0"
+    },
+    "dependencies": {
+        "@coveops/localization-manager": "^1.0.0",
+        "@coveops/turbo-core": "^1.1.1",
+        "@types/ol": "^6.4.2",
+        "coveo-search-ui": "^2.10082.9",
+        "ol": "^6.5.0"
+    },
+    "types": "dist/index.d.ts",
+    "files": [
+        "dist"
+    ]
+}
