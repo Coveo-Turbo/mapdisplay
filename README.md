@@ -1,6 +1,6 @@
 # mapdisplay
 
-https://search.cloud.coveo.com/pages/coveoprofessionalservicesbi4l69nl/demopsmapdisplay#t=Countries&sort=relevancy
+https://search.cloud.coveo.com/pages/coveoprofessionalservicesbi4l69nl/mapdisplay#t=Countries&sort=relevancy
 
 Simple Demo Component to display GeoJson features using the Openlayers Library
 https://openlayers.org/
