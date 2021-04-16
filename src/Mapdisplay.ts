@@ -63,17 +63,20 @@ export class Mapdisplay extends Component {
     private handleDeferredQuerySuccess (successEvent: IQuerySuccessEventArgs) {
       this.vectorLayer.getSource().clear();
 
-      for (var result of successEvent.results.results) {
+      const projectionCode = this.baseProjection.getCode();
+      const OVERRIDE_PROJECTION_CODE = 'EPSG:4326';
+
+      for (let result of successEvent.results.results) {
         if (result.raw.geometry != null) {
           let feature : Feature = this.generateFeatureFromResult(result);
-          if (result.raw.projection != null && result.raw.projection != this.baseProjection) {
+          if (OVERRIDE_PROJECTION_CODE != projectionCode) {
             let geo : Geometry = feature.getGeometry();
 
             let originproj : Projection  = new Projection ({
-              code : result.raw.projection
+              code : OVERRIDE_PROJECTION_CODE
             })
 
-            feature.setGeometry(geo.transform(originproj, this.baseProjection));
+            feature.setGeometry(geo.transform(originproj, projectionCode));
           }
 
           this.vectorLayer.getSource().addFeature(feature);
@@ -89,14 +92,14 @@ export class Mapdisplay extends Component {
       this.map.getView().fit(extent, {duration: 500});
     }
 
-    private generateFeatureFromResult (result) : Feature {     
-      var reader : GeoJson = new GeoJson(); 
+    private generateFeatureFromResult (result) : Feature {
+      var reader : GeoJson = new GeoJson();
       var feature : Feature = reader.readFeature(JSON.parse(result.raw.geometry));
       feature.set("type", result.raw.documenttype);
       return feature;
-    } 
+    }
 
-    private generateBaseLayer () : TileLayer [] { 
+    private generateBaseLayer () : TileLayer [] {
       var layers: TileLayer [] = [];
 
       if (this.baseProjection.getCode() == "EPSG:4326") {
@@ -116,7 +119,7 @@ export class Mapdisplay extends Component {
             source: new OSM()
           })
         );
-      } 
+      }
 
       return layers;
     }
@@ -126,7 +129,7 @@ export class Mapdisplay extends Component {
         'Country': new Style({
           fill: new Fill({
             color: 'rgba(56, 168, 0, 0.8)',
-            
+
           }),
           stroke: new Stroke({
             color: 'rgba(110, 110, 110, 1)',
@@ -143,8 +146,8 @@ export class Mapdisplay extends Component {
       };
 
       return styles;
-    } 
-    
+    }
+
     private generateMap () {
       this.map = new Map({
         view: new View({
@@ -174,4 +177,4 @@ export class Mapdisplay extends Component {
 }
 
 Initialization.registerAutoCreateComponent(Mapdisplay);
-Initialization.registerComponentFields(Mapdisplay.ID, fields); 
+Initialization.registerComponentFields(Mapdisplay.ID, fields);
