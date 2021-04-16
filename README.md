@@ -5,7 +5,9 @@ https://search.cloud.coveo.com/pages/coveoprofessionalservicesbi4l69nl/mapdispla
 Simple Demo Component to display GeoJson features using the Openlayers Library
 https://openlayers.org/
 
-Coveo Org source with demo data: 
+![Example](./docs/example1.png)
+
+Coveo Org source with demo data (private to Coveo):
 https://platform.cloud.coveo.com/admin/#coveoprofessionalservicesbi4l69nl/content/sources/edit/GENERIC_REST/coveoprofessionalservicesbi4l69nl-sqpohznwxeh565skbpbyjrcnim/configuration/
 
 For this demo, a collection of GeoJson feature has been indexed individualy as Coveo items and the geometic infomation has been place in a field called "geometry". The projection code of the features has also been places in a field called "projection". This demo uses "EPSG:4326" or "EPSG:3857" as available examples but most projection systems can be used.
@@ -72,7 +74,7 @@ Place the component in your markup:
 
 The base projection to use for the map, choices are "EPSG:4326" or "EPSG:3857", default is "EPSG:3857"
 
-usage examples: 
+usage examples:
 
 ```html
 <div class="Coveomapdisplay" data-projection="EPSG:4326"></div>
