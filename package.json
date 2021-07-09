@@ -24,10 +24,10 @@
         "@coveops/cli": "^0.15.0"
     },
     "dependencies": {
-        "@coveops/localization-manager": "^1.0.0",
-        "@coveops/turbo-core": "^1.1.1",
+        "@coveops/localization-manager": "^1.0.1",
+        "@coveops/turbo-core": "^1.2.1",
         "@types/ol": "^6.4.2",
-        "coveo-search-ui": "^2.10082.9",
+        "coveo-search-ui": "^2.10084.7",
         "ol": "^6.5.0"
     },
     "types": "dist/index.d.ts",
